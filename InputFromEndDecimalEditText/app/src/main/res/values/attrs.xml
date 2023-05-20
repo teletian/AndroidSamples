@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="InputFromEndDecimalEditText">
+        <attr name="decimalLength" format="integer" />
+        <attr name="integerLength" format="integer" />
+    </declare-styleable>
+
+</resources>

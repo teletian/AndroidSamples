@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.teletian.databindingradiobutton.viewmodel.ViewModel" />
+
+        <import type="com.teletian.databindingradiobutton.enums.Hobby" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.teletian.databindingradiobutton.MainActivity">
+
+        <TextView
+            android:text="你的爱好是？"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.teletian.databindingradiobutton.customview.DataBindingRadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:checkedValue="@={vm.hobby}">
+
+            <com.teletian.databindingradiobutton.customview.DataBindingRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="吃饭"
+                app:value="@{Hobby.EATING.value}" />
+
+            <com.teletian.databindingradiobutton.customview.DataBindingRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="睡觉"
+                app:value="@{Hobby.SLEEPING.value}" />
+
+            <com.teletian.databindingradiobutton.customview.DataBindingRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="打豆豆"
+                app:value="@{Hobby.ATTACKING_DOUDOU.value}" />
+
+        </com.teletian.databindingradiobutton.customview.DataBindingRadioGroup>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取 ViewModel 的值"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</layout>
